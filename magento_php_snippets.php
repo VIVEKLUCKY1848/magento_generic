@@ -40,8 +40,12 @@ echo $strHelper->truncate($string, $length);
 ## Get referer/back url in Magento
 Mage::app()->getRequest()->getServer('HTTP_REFERER');
 
-## Redirect in Magento
-##$this->_redirect('module/controller/action');
+## Redirect within Magento stores only
+## $this->_redirect('module/controller/action');
 $this->_redirect('customer/account/login');
+$this->_redirect('*/*/success');
+## First '*' means current module
+## Second '*' means current controller
+## Third "success" means current controller's action.
 
 ?>
