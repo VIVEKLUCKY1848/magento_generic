@@ -65,3 +65,11 @@ $currurl = Mage::helper('core/url')->getCurrentUrl();
 ## Get logged-in customer's data
 $customer = Mage::getSingleton("customer/session");
 $customer->getData();
+
+## Write custom log data or create custom log
+Mage::log('My log entry');
+Mage::log('My log message: '.$myVariable);
+Mage::logException($e);
+Mage::log('My log entry', null, 'mylogfile.log');
+Mage::log(print_r($variable, true), NULL, 'developer.log');
+Mage::log('My variable: '.$myVariable);
