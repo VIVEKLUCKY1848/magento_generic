@@ -48,4 +48,7 @@ $this->_redirect('*/*/success');
 ## Second '*' means current controller
 ## Third "success" means current controller's action.
 
+## Redirect to both external urls and Magento urls
+$this->_redirectUrl('http://anydomain.com');
+$this->_redirectUrl('customer/account/login'); ## This also works
 ?>
