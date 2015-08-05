@@ -1,4 +1,9 @@
 <?php
+## Visibility list as defined in Magento
+## Mage_Catalog_Model_Product_Visibility::VISIBILITY_NOT_VISIBLE ==> 1
+## Mage_Catalog_Model_Product_Visibility::VISIBILITY_IN_CATALOG ==> 2
+## Mage_Catalog_Model_Product_Visibility::VISIBILITY_IN_SEARCH ==> 3
+## Mage_Catalog_Model_Product_Visibility::VISIBILITY_BOTH ==> 4
 
 ## Fetch products with status "Enabled" and visible in both catalog & search.
 $visibility = array(
