@@ -51,4 +51,10 @@ $this->_redirect('*/*/success');
 ## Redirect to both external urls and Magento urls
 $this->_redirectUrl('http://anydomain.com');
 $this->_redirectUrl('customer/account/login'); ## This also works
-?>
+
+## Check if customer logged in or not:
+if(!Mage::getSingleton('customer/session')->isLoggedIn()) {
+  //not logged in
+} else {
+  // logged in
+}
