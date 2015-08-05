@@ -58,3 +58,6 @@ if(!Mage::getSingleton('customer/session')->isLoggedIn()) {
 } else {
   // logged in
 }
+
+## Get current url in Magento
+$currurl = Mage::helper('core/url')->getCurrentUrl();
