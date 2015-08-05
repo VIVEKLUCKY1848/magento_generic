@@ -37,4 +37,11 @@ echo Mage::helper('core/string')->truncate($string, $length);
 $strHelper = Mage::helper('core/string');
 echo $strHelper->truncate($string, $length);
 
+## Get referer/back url in Magento
+Mage::app()->getRequest()->getServer('HTTP_REFERER');
+
+## Redirect in Magento
+##$this->_redirect('module/controller/action');
+$this->_redirect('customer/account/login');
+
 ?>
