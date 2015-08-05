@@ -31,4 +31,10 @@ foreach($products as $product) {
 }
 $categories = array_values(array_unique($categories));
 
+## Display truncated descriptions and names in templates
+echo Mage::helper('core/string')->truncate($string, $length);
+## or ##
+$strHelper = Mage::helper('core/string');
+echo $strHelper->truncate($string, $length);
+
 ?>
