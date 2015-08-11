@@ -73,3 +73,18 @@ Mage::logException($e);
 Mage::log('My log entry', null, 'mylogfile.log');
 Mage::log(print_r($variable, true), NULL, 'developer.log');
 Mage::log('My variable: '.$myVariable);
+
+## Get product custom option value title by value Id
+# $product = Mage::getModel('catalog/product')->load($product->getId());
+$options = Mage::getModel('catalog/product_option')->getProductOptionCollection($product);
+foreach ($options as $option) {
+		if ($option->getId() == "<optionId>") {
+				$values = Mage::getSingleton('catalog/product_option_value')->getValuesCollection($option);
+				foreach ($values as $value) {
+						if($value->getId() == $valueId) {
+							$valTitle = $value->getTitle();
+							continue;
+						}
+				}
+		}
+}
