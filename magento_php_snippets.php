@@ -75,7 +75,8 @@ Mage::log(print_r($variable, true), NULL, 'developer.log');
 Mage::log('My variable: '.$myVariable);
 
 ## Get product custom option value title by value Id
-# $product = Mage::getModel('catalog/product')->load($product->getId());
+## $product = Mage::getModel('catalog/product')->load($product->getId());
+## if product object is implicitly available
 $options = Mage::getModel('catalog/product_option')->getProductOptionCollection($product);
 foreach ($options as $option) {
 		if ($option->getId() == "<optionId>") {
