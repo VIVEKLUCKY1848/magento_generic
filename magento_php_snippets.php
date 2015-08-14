@@ -89,3 +89,14 @@ foreach ($options as $option) {
 				}
 		}
 }
+
+## Bug free "getIsHomePage" function for using across multiple store-views
+## First override <magento_root_dir>/app/code/core/Mage/Page/Block/Html/Header.php in local codepool and then-
+## -replace it's "getIsHomePage()" with the one given below:
+public function getIsHomePage()
+{
+    $homeUrl = $this->getUrl('')
+    $currentUrl = $this->getUrl('*/*/*', array('_current'=>true, '_use_rewrite'=>true));
+    if (strpos($currentUrl, '?') !== false) $currentUrl = array_shift(explode('?', $currentUrl));
+    return $homeUrl == $currentUrl;
+}
