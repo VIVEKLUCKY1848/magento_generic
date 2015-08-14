@@ -79,15 +79,15 @@ Mage::log('My variable: '.$myVariable);
 ## if product object is implicitly available
 $options = Mage::getModel('catalog/product_option')->getProductOptionCollection($product);
 foreach ($options as $option) {
-		if ($option->getId() == "<optionId>") {
-				$values = Mage::getSingleton('catalog/product_option_value')->getValuesCollection($option);
-				foreach ($values as $value) {
-						if($value->getId() == $valueId) {
-							$valTitle = $value->getTitle();
-							continue;
-						}
-				}
+	if ($option->getId() == "<optionId>") {
+		$values = Mage::getSingleton('catalog/product_option_value')->getValuesCollection($option);
+		foreach ($values as $value) {
+			if($value->getId() == $valueId) {
+				$valTitle = $value->getTitle();
+				continue;
+			}
 		}
+	}
 }
 
 ## Bug free "getIsHomePage" function for using across multiple store-views
